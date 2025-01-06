@@ -1,0 +1,22 @@
+<!--Creared By : Prem Singh Foujdar
+  Date: 06-01-2025-->
+  <template>
+    <lightning-card title="Account Hierarchy">
+        <template if:true={treeItems}>
+            <lightning-tree
+                items={treeItems}
+                onselect={handleSelect}
+            ></lightning-tree>
+        </template>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+        <template if:true={error}>
+            <div class="error">
+                <p>Error: {error}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>
+
+
